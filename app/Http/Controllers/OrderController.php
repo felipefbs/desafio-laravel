@@ -19,7 +19,6 @@ class OrderController extends Controller
         $validatedData = $request->validate(rules: [
             'client_name' => 'required|string',
             'order_date' => 'required|date',
-            'delivery_date' => 'nullable|date',
         ]);
 
         $validatedData['status'] = 'pending';
