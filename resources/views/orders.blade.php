@@ -251,15 +251,15 @@
                     orderDateInput.value = order.order_date;
                     deliveryDateInput.value = order.delivery_date;
                     statusSelect.value = order.status;
-                    submitBtn.textContent = 'Atualizar Order';
+                    submitBtn.textContent = 'Atualizar pedido';
                     cancelBtn.style.display = 'inline-block';
                 } else {
-                    alert('Erro ao carregar a Order para edição.');
+                    alert('Erro ao carregar o pedido para edição.');
                 }
             };
 
             window.deleteOrder = async function (id) {
-                if (confirm('Tem certeza que deseja apagar esta Order?')) {
+                if (confirm('Tem certeza que deseja apagar este pedido?')) {
                     const response = await fetch(apiUrl + '/' + id, {
                         method: 'DELETE',
                         headers: {
