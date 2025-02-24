@@ -202,9 +202,11 @@
                     client_name: clientNameInput.value,
                     order_date: orderDateInput.value,
                 };
+
                 let response;
+
                 if (orderId) {
-                    const response = await fetch(apiUrl + '/' + orderId, {
+                    response = await fetch(apiUrl + '/' + orderId, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -212,7 +214,7 @@
                         body: JSON.stringify(data)
                     });
                 } else {
-                    const response = await fetch(apiUrl, {
+                    response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
