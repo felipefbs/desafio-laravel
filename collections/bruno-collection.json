@@ -1,0 +1,146 @@
+{
+  "name": "desafio",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Create order",
+      "seq": 2,
+      "request": {
+        "url": "http://localhost/api/orders/",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n\"client_name\": \"Marcelo Big Big\",\n\"order_date\": \"2024-01-01\",\n\"delivery_date\": \"2024-01-01\",\n\"status\": \"canceled\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "List orders",
+      "seq": 1,
+      "request": {
+        "url": "http://localhost/api/orders/",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Up",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost/up",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Update order",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost/api/orders/b512d640-048f-4096-9743-5407404411c0",
+        "method": "PUT",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"delivery_date\": \"2024-02-01\",\n  \"status\": \"delivered\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Destroy order",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost/api/orders/85ffa46d-ed27-42c1-a76a-8a8cab1d65fe",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"delivery_date\": \"2024-02-01\",\n  \"status\": \"delivered\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "desafio",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.00023651123046875,
+    "filesCount": 2
+  }
+}
