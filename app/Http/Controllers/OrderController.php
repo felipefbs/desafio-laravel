@@ -38,8 +38,20 @@ class OrderController extends Controller
 
         $order = Order::findOrFail(id: $id);
 
-        if (isset($validatedData['status']) && $order->status === $validatedData['status']) {
-            return response()->json(['error' => 'O status enviado é igual ao status atual.'], 400);
+        if (in_array($order->status, ['delivered', 'canceled']) && isset($validatedData['status'])) {
+            return response()->json(
+                ['error' => 'Não é possível alterar o status de um pedido que já foi finalizada (entregue ou cancelada).'],
+                400
+            );
+        }
+
+        if ($order->status === 'delivered' && isset($validatedData['delivery_date'])) {
+            if ($validatedData['delivery_date'] != $order->delivery_date) {
+                return response()->json(
+                    ['error' => 'Não é possível alterar a data de entrega de um pedido entregue.'],
+                    400
+                );
+            }
         }
 
         $order->update($validatedData);
