@@ -20,9 +20,9 @@ class OrderController extends Controller
             'client_name' => 'required|string',
             'order_date' => 'required|date',
             'delivery_date' => 'nullable|date',
-            'status' => 'required|in:pending,delivered,canceled',
         ]);
 
+        $validatedData['status'] = 'pending';
         $order = Order::create(attributes: $validatedData);
 
         return response()->json(data: $order, status: 201);
