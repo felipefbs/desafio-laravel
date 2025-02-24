@@ -38,6 +38,11 @@ class OrderController extends Controller
         ]);
 
         $order = Order::findOrFail(id: $id);
+
+        if (isset($validatedData['status']) && $order->status === $validatedData['status']) {
+            return response()->json(['error' => 'O status enviado é igual ao status atual.'], 400);
+        }
+
         $order->update($validatedData);
 
         return response()->json(data: $order, status: 200);
